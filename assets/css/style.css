@@ -1,0 +1,321 @@
+/* color and font */
+:root {
+    --dark-bg: #000000;
+    --primary-text: #e0e0e0;
+    --secondary-text: #fff;
+    --accent-color: #d4d4d4;
+    --heading-font: "Lora", serif;
+    --body-font: "Montserrat", sans-serif;
+}
+
+p {
+    font-weight: 300;
+}
+
+.container {
+    width: 80%;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--primary-text);
+    font-family: var(--body-font);
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    background-color: transparent;
+    padding: 1.5rem 0;
+    transition: background-color 0.4s ease-in-out, padding 0.4s ease-in-out;
+}
+
+.navbar.scrolled {
+    background-color: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(5px);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--primary-text);
+}
+
+.navbar .nav-link {
+    color: #a0a0a0;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #e0e0e0;
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0;
+    outline: none !important;
+    box-shadow: none !important;
+    position: relative;
+    width: 30px;
+    height: 22px;
+}
+
+.hamburger-icon {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.hamburger-icon span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--primary-text);
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+}
+
+.hamburger-icon span:nth-child(1) {
+    top: 0px;
+}
+
+.hamburger-icon span:nth-child(2) {
+    top: 9px;
+}
+
+.hamburger-icon span:nth-child(3) {
+    top: 18px;
+}
+
+.navbar-toggler[aria-expanded="true"] .hamburger-icon span:nth-child(1) {
+    top: 9px;
+    transform: rotate(135deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .hamburger-icon span:nth-child(2) {
+    opacity: 0;
+    left: -30px;
+}
+
+.navbar-toggler[aria-expanded="true"] .hamburger-icon span:nth-child(3) {
+    top: 9px;
+    transform: rotate(-135deg);
+}
+
+/* --- Common Styling --- */
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-family: var(--heading-font);
+    font-weight: 500;
+    color: var(--primary-text);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.4rem;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: var(--secondary-text);
+    margin-bottom: 1rem;
+}
+
+/* --- Hero Section --- */
+#hero {
+    height: 100vh;
+    background: url("../images/home.jpeg") no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.414);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-family: var(--heading-font);
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+.hero-content p {
+    font-family: var(--heading-font);
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* --- Introduction Section --- */
+#intro p {
+    max-width: 900px;
+    margin: 0 auto;
+    color: var(--secondary-text);
+    line-height: 1.8;
+}
+
+/* --- Services Section --- */
+#services {
+    background: url("../images/music_bg.jpeg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+#services::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.services-content {
+    position: relative;
+    z-index: 2;
+}
+
+.service-item p {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    color: var(--secondary-text);
+}
+
+.service-item img {
+    width: 65px;
+}
+
+/* --- Custom Button --- */
+.btn-custom {
+    border: 1px solid var(--secondary-text);
+    color: var(--secondary-text);
+    padding: 10px 30px;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+}
+
+.btn-custom:hover {
+    background-color: var(--primary-text);
+    color: var(--dark-bg);
+    border-color: var(--primary-text);
+}
+
+/* --- Features Section --- */
+.feature-img {
+    max-width: 100%;
+    height: auto;
+}
+
+img.profile-box {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 8px 12px rgb(0, 0, 0));
+    width: 75%;
+}
+
+.feature-list p {
+    margin-bottom: 1rem;
+    color: var(--secondary-text);
+}
+
+.feature-list img {
+    width: 20px;
+}
+
+/* --- Contact Section --- */
+#contact p {
+    max-width: 600px;
+    margin: 0 auto 1.5rem auto;
+    line-height: 1.8;
+    color: var(--secondary-text);
+}
+
+.contact-number {
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--primary-text);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #000;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-title {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    color: var(--primary-text);
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+}
+
+.white-icon {
+    filter: brightness(0) invert(1);
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.5rem;
+    }
+
+    /* --- Hero Section --- */
+    #hero {
+        height: 70vh;
+    }
+}
